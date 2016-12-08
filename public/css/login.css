@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width:100%;
+	height:100%;
+	background:url("../images/login_bg.jpg") repeat-x 0 0;
+}
+/*login登录页*/
+div.login{
+	width:100%;
+	height:100%;
+	margin:170px auto;
+}
+.img_a{
+	width:800px;
+	height:361px;
+	margin:0 auto;
+	background:url("../images/denglu_bg.png");
+}
+.img_u{
+	width:528px;
+	height:206px;
+	margin:0 auto;
+	padding:54px 46px;
+}
+.img_a p{
+	font-family:"汉仪综艺体简";
+	color:#fff;
+	font-size:29px;
+}
+.forms{
+	margin-top:42px;
+	font-family:"文鼎CS中黑";
+	font-weight:bold;
+	color:#fff;
+	font-size:16px;
+}
+
+.forms img{
+	float:left;
+	margin-right:45px;
+	margin-left:10px;
+}
+.forms .inp1{
+	width:201px;
+	height:47px;
+	line-height:20px;
+	padding-left:10px;
+	font-size:14px;
+	background:url("../images/input.png");
+}
+.forms .inp2{
+	width:143px;
+	height:46px;
+	background:url("../images/button.png");
+	font-family:"文鼎CS中黑";
+	color:#fff;
+	font-size:22px;
+	font-weight:bold;
+	margin-left:257px;
+	margin-top:25px;
+}

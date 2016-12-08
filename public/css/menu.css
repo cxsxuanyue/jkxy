@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+.subClass{
+	display:none;
+}
+.action{
+	display:block;
+}
+
+/*内容部分*/
+.img_bt{
+	position:relative;
+	left:200px;
+	top:306px;
+	cursor: pointer;
+}
+div.menu{
+	width:205px;
+	height:656px;
+	background:
+	url("../images/menu_bg.jpg");
+}
+div.menu .menus{
+	width:20px;
+	height:25px;
+	margin:6px 0 0 4px;
+	background:url("../images/icon.png") no-repeat;
+	background-position:-1px -132px;
+}
+div.menu .menur{
+	width:51px;
+	height:17px;
+	line-height:17px;
+	margin:8px 0 0 10px;
+	padding-left:18px;
+	background:url("../images/left_menu.png");
+	color:#fff;
+}
+div.menu .menul{
+	width:16px;
+	height:47px;
+	margin-left:9px;
+	font-weight:bold;
+	padding:10px 0 0 5px;
+	background:url("../images/menu.png");
+}
+div.menu .menu_nav{
+	margin-top:15px;
+}
+div.menu .menu_nav li{
+	width:120px;
+	-height:25px;
+	line-height:25px;
+	margin-bottom:5px;
+	color:#033D61;
+}
+div.menu .menu_nav li a:hover{
+	color:#f00;
+	text-decoration:underline;
+}
+div.menu .menu_nav li .yia{
+	background:url("../images/icon.png") no-repeat;
+	background-position:10px -102px;
+	color:#033D61;
+}
+div.menu .menu_nav li span{
+	background:url("../images/icon.png") no-repeat;
+	background-position:30px -178px;
+	padding-left:50px;
+}
+
+div.menu .menu_nav li dl dd{
+	width:90px;
+	height:25px;
+	padding-left:20px;
+	margin-left:45px;
+	background:url("../images/icon.png") no-repeat;
+	background-position:0 -75px;
+}
+div.menu .menu_nav li dl dd a{
+	color:#033D61;
+}
+/*菜单部分的滚动条*/
+div.menu div.over{
+	width:170px;
+	-height:590px;
+	-height:600px\9;
+	margin-left:30px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){ div.menu div.over {height:600px;} }
+
+/*菜单部分的滚动条*/
