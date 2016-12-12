@@ -33,6 +33,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('list', 'IndexController@listshow');
         Route::get('menu', 'IndexController@menu');
         Route::get('main', 'IndexController@main');
+        Route::post('close', 'IndexController@close');
+
+        // 系统管理清除缓存
+        Route::get('systemClearCache', 'IndexController@systemClearCache');
 
         // 退出系统
         Route::get('quit','LoginController@quit');
@@ -41,8 +45,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('uppass','LoginController@uppass');
         // 获取学科列表
         Route::any('subject', 'CustomerController@subject');
-        // 获取学科列表
+        // 获取班级列表
         Route::any('class', 'CustomerController@getClass');
+        // 申诉无效客户
+        Route::any('appeal', 'CustomerController@appeal');
         // 获取手机验证
         Route::post('phone', 'CustomerController@phone');
         // 操作客户的资源路由

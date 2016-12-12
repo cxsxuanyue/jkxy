@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
+use Rediss;
 
 class indexController extends Controller
 {
@@ -42,4 +43,29 @@ class indexController extends Controller
         return view('index.main');
     }
 
+    // 删除所有redis缓存的方法
+    public function close()
+    {
+        $button = $_POST['button'];
+        if ($button) {
+
+           $res =  Rediss::flushdb();
+           if ($res == 'OK') {
+               return redirect(url('home/customer'));
+           } else {
+               return view('errors.503');
+           }
+        }
+    }
+
+    // 系统管理下的清楚缓存
+    public function systemClearCache()
+    {
+        $res =  Rediss::flushdb();
+        if ($res) {
+            return view('errors.show')->with('show', 'OK');
+        } else {
+            return view('errors.show')->with('show', 'UNOK');
+        }
+    }
 }

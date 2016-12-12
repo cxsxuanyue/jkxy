@@ -24,7 +24,7 @@
 				<tr>
 
 					<td class="centers">电话<span style="color:red;">(*)</span>：</td>
-					<td colspan="9">
+					<td colspan="9" id="aa">
 						<input type="text" name="phone" id="phone" value=""   />
 
 
@@ -182,7 +182,7 @@
 					'remark':$('#remark').val()
 				},
 				function (data) {
-					console.log(data)
+
 					if(data ==1){
 						layer.confirm('录入成功', {
 							btn: ['确定'] //可以无限个按钮
@@ -194,12 +194,32 @@
 						layer.alert('手机号码重复');
 					}else{
 						layer.alert('已分配到待分配库，请提醒管理员排班');
+						location.reload();
 					}
 
 				}
 		);
 	});
+	//	电话判断
+	$('#phone').blur(function () {
+		$("#aa span").remove();
+		$.post('{{url('home/phone ')}}', {
+					'_token':'{{csrf_token()}}',
+					'phone':$('#phone').val()
+				},
+				function (data) {
 
+					if(data == 'SN202'){
+						$('#aa').append('<span style="color:red;">手机号重复,不能录入</span>');
+					}else if (data == 'SN209'){
+						$('#aa').append('<span style="color:red;">手机号重复,但可以录入，客户不属于此咨询师！</span>');
+					}else if(data == 'SN203'){
+						$('#aa').append('<span style="color:red;">手机号不能为空</span>');
+					}
+
+				}
+		);
+	});
 
 	// 添加表单验证的必选项
 	function addStar(param){

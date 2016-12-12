@@ -37,6 +37,7 @@
 										'password':$('input[name=password]').val(),
 									},
 								function (data) {
+
 									if(data == '0'){
 										layer.alert('账号或密码错误');
 									}else {

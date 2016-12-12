@@ -15,6 +15,13 @@
             </dl>
         </li>
 
+        <li>
+            <a class="yia" href="#"><span>系统管理</span></a>
+            <dl class="subClass">
+                <dd><a href="{{url('home/systemClearCache')}}" target="mainFrame">清除缓存</a></dd>
+            </dl>
+        </li>
+
 
         <li><a class="yia" href="#"><span>个人中心</span></a>
             <dl class="subClass">

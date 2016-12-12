@@ -20,10 +20,15 @@ class LoginController extends Controller
 
         $url = config('api.host').'login/login';
 
-        $arr = [
-            'name' => $_POST['name'],
-            'password' => $_POST['password']
-        ];
+        // 判断是否提交过来参数
+        if (isset($_POST['name'])) {
+            $arr = [
+                'name' => $_POST['name'],
+                'password' => $_POST['password']
+            ];
+        } else {
+            return redirect('/');
+        }
 
         $token = new Base();
 
